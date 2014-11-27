@@ -1,0 +1,21 @@
+
+html, body {
+	height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: -100px; 
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+.foot,.wrapper:after {
+  /* .push must be the same height as footer */
+	height: 100px; 
+}
+.foot {
+    background: $color5;
+    clear:both;
+}

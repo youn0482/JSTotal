@@ -1,0 +1,153 @@
+/*******************************
+    INITIAL CSS/ WORKING CODE
+********************************/
+
+/****DEFAULTS*****/
+
+*{
+ box-sizing: border-box   
+}
+body{ 
+    text-align: center;
+}
+
+h1, h2, h3{
+    
+    font-family: $font1;
+    text-align: center;
+}
+
+h4, h5{
+    text-align: center;
+    margin-top: 45px;
+    padding: 10px;
+    font-family: $font2 bold;
+}
+
+
+p, .btn{
+    font-family: $font2;
+    font-weight: 200;
+    text-align: center;
+    padding: 10px;
+}
+
+.iconic{
+    text-align: center;
+    margin: 0 auto;
+    opacity: 1;
+    
+    @include transIT(1s);
+    
+}
+
+.col-3{
+    min-height: 100px;
+    float: left;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+     
+  // equalSpaced( $num_of_cols, $spacing, $width  )
+  @include equalSpaced(1, 0%, 100%);
+}
+
+
+
+.col-4{
+      background: $color1;
+      min-height: 100px;
+      float: left;
+
+
+      // equalSpaced( $num_of_cols, $spacing, $width  )
+      @include equalSpaced(1, 0%, 100%);
+}
+
+.col-3 p{
+    
+    position:absolute;
+    top:60px;
+    left:0px;
+    opacity: 0;
+    width: 100%;
+    
+    @include transIT(1s);
+}
+
+.col-4 p{
+    
+ height:65px;  
+
+}
+
+.btn{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px; 
+    color: #fff;
+    @include gradient(gray 0%,black 100%);
+    @include transIT(0s);
+}
+
+/******HOVER STATES********/
+
+.col-3:hover .iconic{
+    
+    opacity: 0.1;
+}
+
+.col-3:hover p{
+    
+    opacity: 1;
+}
+
+.btn:hover{
+    
+    @include gradient(lightgray 0%, gray 100%);
+    
+}
+
+/******MEDIA QUERIES********/
+@media all and (min-width: 450px){
+
+    .col-3 p{
+    
+        width: 70%; 
+        margin-left: 15%
+        
+    }
+    
+}
+
+
+@media all and (min-width: 960px){
+    
+    .col-3 p{
+        
+        margin: 0;
+        width: 100%;
+        
+    }
+    
+    .col-4 p{
+        height: 90px;
+        
+    }
+    .col-3{
+      height: auto;
+      float: left;
+
+      // equalSpaced( $num_of_cols, $spacing, $width  )
+      @include equalSpaced(3, 5%, 100%);
+    }
+
+    .col-4{
+      background: $color1;
+      height: 270px;
+      float: left;
+      // equalSpaced( $num_of_cols, $spacing, $width  )
+      @include equalSpaced(4, 0, 100%);
+    }
+}

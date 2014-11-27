@@ -213,26 +213,46 @@ html, body {
 ********************************/
 /****DEFAULTS*****/
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0 auto; }
 
 body {
   text-align: center; }
 
 h1, h2, h3 {
   font-family: "Nova Square", cursive;
-  text-align: center; }
-
-h4, h5 {
   text-align: center;
-  margin-top: 45px;
-  padding: 10px;
-  font-family: "Raleway", sans-serif bold; }
+  font-size: 1.5rem; }
 
-p, .btn {
+h4 {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  font-family: "Raleway", sans-serif bold;
+  font-size: 1.5rem; }
+
+h5 {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7rem; }
+
+p {
   font-family: "Raleway", sans-serif;
   font-weight: 200;
   text-align: center;
-  padding: 10px; }
+  padding: 20px;
+  height: auto; }
+
+.btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 50px; }
+
+div#btm {
+  /* STEVE! WHY WHEN I TRY TO STYLE THIS AND VIEW IN INSPECTOR ITS JUST A LINE AT THE TOP UNDER THE HEADER?SHOULD BE THE WHOLE COL-4 WRAPPER??*/ }
 
 .iconic {
   text-align: center;
@@ -277,9 +297,6 @@ p, .btn {
   -o-transition: all 1s ease;
   transition: all 1s ease; }
 
-.col-4 p {
-  height: 65px; }
-
 .btn {
   text-align: center;
   font-size: 12px;
@@ -303,6 +320,7 @@ p, .btn {
   opacity: 1; }
 
 .btn:hover {
+  color: #7F7578;
   background: -webkit-linear-gradient(lightgray 0%, gray 100%);
   background: -o-linear-gradient(lightgray 0%, gray 100%);
   background: -moz-linear-gradient(lightgray 0%, gray 100%);
@@ -313,13 +331,22 @@ p, .btn {
   .col-3 p {
     width: 70%;
     margin-left: 15%; } }
+@media all and (min-width: 720px) {
+  .col-4 {
+    width: 50%;
+    margin-left: 0%; }
+    .col-4:first-child {
+      margin-left: 0; }
+
+  .col-4 p {
+    min-height: 100px; } }
 @media all and (min-width: 960px) {
   .col-3 p {
     margin: 0;
     width: 100%; }
 
   .col-4 p {
-    height: 90px; }
+    min-height: 135px; }
 
   .col-3 {
     height: auto;
@@ -331,11 +358,14 @@ p, .btn {
 
   .col-4 {
     background: #CBBBBF;
-    height: 270px;
+    min-height: 230px;
     float: left;
     width: 25%;
     margin-left: 0; }
     .col-4:first-child {
-      margin-left: 0; } }
+      margin-left: 0; }
+
+  .col-4 .btn {
+    margin-bottom: 20px; } }
 
 /*# sourceMappingURL=main.css.map */

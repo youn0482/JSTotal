@@ -5,7 +5,8 @@
 /****DEFAULTS*****/
 
 *{
- box-sizing: border-box   
+    box-sizing: border-box; 
+     margin:0 auto;
 }
 body{ 
     text-align: center;
@@ -15,21 +16,48 @@ h1, h2, h3{
     
     font-family: $font1;
     text-align: center;
+    font-size: $fsize2;
 }
 
-h4, h5{
+h4{
     text-align: center;
-    margin-top: 45px;
-    padding: 10px;
+    margin: 0;
+    padding-top:$pad1;
     font-family: $font2 bold;
+    font-size: $fsize2;
+    
+}
+h5{
+    
+    text-align: center;
+    margin-top: 0px;
+    padding-top:$pad1;
+    font-family: $font2 ;
+    font-size: $fsize3;
+    
 }
 
 
-p, .btn{
+p{
     font-family: $font2;
     font-weight: 200;
     text-align: center;
-    padding: 10px;
+    padding: $pad1;
+    height:auto;
+}
+.btn{
+    font-family: $font2;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom:$pad2;
+    
+}
+
+div#btm{
+    
+    /* STEVE! WHY WHEN I TRY TO STYLE THIS AND VIEW IN INSPECTOR ITS JUST A LINE AT THE TOP UNDER THE HEADER?SHOULD BE THE WHOLE COL-4 WRAPPER??*/
+    
+    
 }
 
 .iconic{
@@ -45,8 +73,8 @@ p, .btn{
     min-height: 100px;
     float: left;
     text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: $pad2;
+    padding-bottom: $pad2;
     position: relative;
      
   // equalSpaced( $num_of_cols, $spacing, $width  )
@@ -76,11 +104,7 @@ p, .btn{
     @include transIT(1s);
 }
 
-.col-4 p{
-    
- height:65px;  
 
-}
 
 .btn{
     text-align: center;
@@ -105,6 +129,7 @@ p, .btn{
 
 .btn:hover{
     
+    color: $color5;
     @include gradient(lightgray 0%, gray 100%);
     
 }
@@ -119,8 +144,21 @@ p, .btn{
         
     }
     
+    
 }
 
+@media all and (min-width: 720px){
+  .col-4 {
+        
+        @include equalSpaced(2, 0%, 100%);
+    }   
+    
+    .col-4 p{
+        min-height: 100px;
+        
+    }
+    
+}
 
 @media all and (min-width: 960px){
     
@@ -132,7 +170,7 @@ p, .btn{
     }
     
     .col-4 p{
-        height: 90px;
+        min-height:135px;
         
     }
     .col-3{
@@ -145,9 +183,13 @@ p, .btn{
 
     .col-4{
       background: $color1;
-      height: 270px;
+      min-height: 230px;
       float: left;
       // equalSpaced( $num_of_cols, $spacing, $width  )
       @include equalSpaced(4, 0, 100%);
+    }
+    .col-4 .btn{
+        
+        margin-bottom: $pad1;
     }
 }
